@@ -1,6 +1,13 @@
+@import 'pbgc_theme';
+
 .pbgc {
 
   .pbgc-footer {
     text-align: center;
+
+    a {
+      color: $pbgc-footer-gray;
+      font-size: 0.9rem;
+    }
   }
 }

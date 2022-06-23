@@ -1,0 +1,27 @@
+.pbgc .pbgc-dashboard .nav-tabs {
+  padding-left: 20px;
+}
+.pbgc .pbgc-dashboard .nav-tabs .nav-link {
+  border-radius: 0.5rem 0.5rem 0 0;
+  color: #0b4778;
+}
+.pbgc .pbgc-dashboard .nav-tabs .nav-link.active {
+  color: #0b4778;
+  font-weight: 700;
+}
+.pbgc .pbgc-dashboard .pbgc-card {
+  border-radius: 0 0 0.5rem 0.5rem;
+  border: none;
+}
+.pbgc .pbgc-dashboard .pbgc-card .pbgc-dashboard-table {
+  font-size: 0.85rem;
+}
+.pbgc .pbgc-dashboard .pbgc-card .pbgc-dashboard-table th {
+  background-color: #fbfbfb;
+  border-top: none;
+}
+.pbgc .pbgc-dashboard .pbgc-card .pbgc-dashboard-table .pbgc-table-icon {
+  font-size: 16px;
+  vertical-align: middle;
+  padding: 0 0 2px 8px;
+}

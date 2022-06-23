@@ -5,38 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PBGC Redesign</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/pbgc.css">
     <link rel="stylesheet" href="css/pbgc-sidebar.css">
     <link rel="stylesheet" href="css/pbgc-content-container.css">
+    <link rel="stylesheet" href="css/pbgc-dashboard.css">
     <link rel="stylesheet" href="css/pbgc-footer.css">
+    <link rel="stylesheet" href="css/pbgc-buttons.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </head>
 <body class="pbgc d-flex h-100">
-    <nav class="flex-column pbgc-sidebar">
-      Sidebar.
-    </nav>
-  <div class="flex-column flex-fill pbgc-content-container">
-    <div class="d-flex flex-column h-100">
-      <div class="flex-shrink-0">
-        <div class="container-fluid p-4">
-          <ul class="nav nav-tabs" id="pbgcDashboardTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-              <a class="nav-link active" href="#" id="pbgcDashboardDrafts">Drafts</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" href="#" id="pbgcDashboardSubmitted">Submitted</a>
-            </li>
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Drafts.</div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Submitted.</div>
+  <!-- Start Sidebar -->
+  <nav class="d-flex flex-column h-100 pbgc-sidebar">
+    <div class="container-fluid flex-shrink-0">
+      <div class="row">
+        <div class="col">
+          <img class="pbgc-logo" src="images/pbgc-logo.svg" alt="PBGC Logo">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <nav class="nav flex-column nav-pills pbgc-sidebar-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" href="#" role="tab" aria-selected="true">
+              <span class="material-icons-outlined pbgc-icon">speed</span>
+              <span class="pbgc-sidebar-tab">Dashboard</span>
+            </a>
+            <a class="nav-link" href="#" role="tab" aria-selected="true">
+              <span class="material-icons-outlined pbgc-icon">note_add</span>
+              <span class="pbgc-sidebar-tab">New Filing</span>
+            </a>
+            <a class="nav-link" href="#" role="tab" aria-selected="true">
+              <span class="material-icons-outlined pbgc-icon">help_outline</span>
+              <span class="pbgc-sidebar-tab">Help Center</span>
+            </a>
+            <a class="nav-link" href="#" role="tab" aria-selected="true">
+              <span class="material-icons-outlined pbgc-icon">settings</span>
+              <span class="pbgc-sidebar-tab">Settings</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="mt-auto">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <nav class="nav flex-column nav-pills pbgc-sidebar-pills  pbgc-sidebar-logout" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link" href="#" role="tab" aria-selected="true">
+                <span class="material-icons-outlined pbgc-icon">logout</span>
+                <span class="pbgc-sidebar-tab">Logout</span>
+              </a>
+            </nav>
           </div>
         </div>
       </div>
+    </div>
+  </nav>
+  <!-- End Sidebar -->
+
+  <div class="flex-column flex-fill pbgc-content-container">
+    <div class="d-flex flex-column h-100">
+      
+      <!-- Start Dashboard -->
+      <div class="flex-shrink-0">
+        <div class="container-fluid p-4 pbgc-dashboard">
+          <ul class="nav nav-tabs" id="pbgcDashboardTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" href="#pbgcDraftsTabContent" id="pbgcDashboardDrafts" data-toggle="tab">Drafts</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" href="#pbgcSubmittedTabContent" id="pbgcDashboardSubmitted" data-toggle="tab">Submitted</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="pbgcDraftsTabContent" role="tabpanel" aria-labelledby="home-tab">
+              <div class="card pbgc-card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <table class="pbgc-dashboard-table table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Filing Type</th>
+                            <th scope="col">Company Name</th>
+                            <th scope="col">Date Created</th>
+                            <th scope="col">EIN/PIN</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td scope="row">e-4010: Controlled Group Filing</td>
+                            <td>Acme Services Co.</td>
+                            <td>05/01/2022</td>
+                            <td>3648210377</td>
+                            <td>
+                              <button class="btn btn-sm btn-pbgc btn-pbgc-secondary">
+                                Continue 
+                                <span class="material-icons-outlined pbgc-table-icon">
+                                  arrow_forward
+                                </span>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td scope="row">e-4043 Reportable Events</td>
+                            <td>Acme Services Co.</td>
+                            <td>04/28/2022</td>
+                            <td>3648210377</td>
+                            <td>
+                              <button class="btn btn-sm btn-pbgc btn-pbgc-secondary">
+                                Continue 
+                                <span class="material-icons-outlined pbgc-table-icon">
+                                  arrow_forward
+                                </span>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="pbgcSubmittedTabContent" role="tabpanel" aria-labelledby="profile-tab">
+              <div class="card pbgc-card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      Submitted.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Dashboard -->
+
+      <!-- Start Footer -->
       <footer class="mt-auto py-1 pbgc-footer">
         <a href="#">PBGC.gov</a> | <a href="#">Paperwork Reduction Act Notice</a>
       </footer>
+      <!-- End Footer -->
     </div>
   </div>
 </body>

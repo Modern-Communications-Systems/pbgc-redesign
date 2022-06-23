@@ -1,6 +1,8 @@
+@import 'pbgc_theme';
+
 .pbgc {
   
   .pbgc-content-container {
-    background-color: #f2f2f2;
+    background-color: $pbgc-gray-100;
   }
 }

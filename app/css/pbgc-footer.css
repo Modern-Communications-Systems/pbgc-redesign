@@ -1,3 +1,7 @@
 .pbgc .pbgc-footer {
   text-align: center;
 }
+.pbgc .pbgc-footer a {
+  color: #757575;
+  font-size: 0.9rem;
+}

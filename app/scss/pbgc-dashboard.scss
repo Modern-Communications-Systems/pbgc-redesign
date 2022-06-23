@@ -1,0 +1,42 @@
+@import 'pbgc_theme';
+
+.pbgc {
+
+  .pbgc-dashboard {
+
+    .nav-tabs {
+      padding-left: 20px;
+
+      .nav-link {
+        border-radius: .5rem .5rem 0 0;
+        color: $pbgc-primary;
+        
+        &.active {
+          color: $pbgc-primary;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .pbgc-card {
+      border-radius: 0 0 .5rem .5rem;
+      border: none;
+
+      .pbgc-dashboard-table {
+        font-size: .85rem;
+
+        th {
+          background-color: #fbfbfb;
+          border-top: none;
+        }
+
+        .pbgc-table-icon {
+          font-size: 16px;
+          vertical-align: middle;
+          padding: 0 0 2px 8px;
+        }
+
+      }
+    }
+  }
+}
