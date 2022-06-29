@@ -1,0 +1,39 @@
+.pbgc .pbgc-sidebar {
+  min-width: 225px;
+  background-color: #ffffff;
+}
+.pbgc .pbgc-sidebar .pbgc-logo {
+  width: 120px;
+  margin: 0 auto 30px auto;
+  padding: 25px 0;
+  display: block;
+  border-bottom: 1px solid #dfe1e2;
+}
+.pbgc .pbgc-sidebar .pbgc-sidebar-pills .nav-link {
+  margin-bottom: 10px;
+  color: #0b4778;
+  border-radius: 8px;
+}
+.pbgc .pbgc-sidebar .pbgc-sidebar-pills .nav-link.active, .pbgc .pbgc-sidebar .pbgc-sidebar-pills .nav-link.active:hover {
+  background-color: #0b4778;
+  color: #ffffff;
+  box-shadow: none;
+}
+.pbgc .pbgc-sidebar .pbgc-sidebar-pills .nav-link:focus, .pbgc .pbgc-sidebar .pbgc-sidebar-pills .nav-link:focus-visible {
+  box-shadow: 0px 0px 4px 2px rgba(0, 189, 227, 0.5);
+}
+.pbgc .pbgc-sidebar .pbgc-sidebar-pills .nav-link:hover {
+  background-color: #e7f6f8;
+  box-shadow: 2px 2px 0px #0b4778;
+}
+.pbgc .pbgc-sidebar .pbgc-sidebar-pills .nav-link .pbgc-icon {
+  vertical-align: middle;
+}
+.pbgc .pbgc-sidebar .pbgc-sidebar-pills .nav-link .pbgc-sidebar-tab {
+  padding-left: 8px;
+  vertical-align: middle;
+}
+.pbgc .pbgc-sidebar .pbgc-sidebar-logout {
+  padding-top: 10px;
+  border-top: 1px solid #dfe1e2;
+}

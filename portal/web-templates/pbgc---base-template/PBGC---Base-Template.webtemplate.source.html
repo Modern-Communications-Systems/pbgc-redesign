@@ -1,0 +1,58 @@
+{% comment %}
+    Name: PBGC - Base Template
+    Description: Base template for PBGC Portal. All page/content templates within the portal should extend this template.
+    Author: Deloitte
+    Date Last Modified: 06/27/2022
+{% endcomment %}
+<!DOCTYPE html>
+    <html lang="en" class="h-100">
+        <head>
+            {% block globalHeader -%}
+
+                {% comment %}
+                    Includes PBGC head template to override system header with older versions of bootstrap, etc.
+                    Can optionally be overridden on a per page basis if a different header is needed.
+                {% endcomment %}
+                {% include 'PBGC - Header' %}
+
+            {%- endblock %}
+            {% block pageHeader -%}
+
+                {% comment %}
+                    Includes PBGC head template to override system header with older versions of bootstrap, etc.
+                    Can optionally be overridden on a per page basis if a different header is needed.
+                {% endcomment %}
+            {%- endblock %}
+        </head>
+
+    <body class="pbgc d-flex h-100">
+        {% block navigation -%}
+
+            {% comment %}
+                Includes PBGC sidebar navigation template driven by Web Links Set to setup sidebar navigation for the site
+                Can optionally be overridden on a per page basis if a different navigation is needed.
+            {% endcomment %}
+
+            {% include 'PBGC - Sidebar Navigation' %}
+        {%- endblock %}
+        <div class="flex-column flex-fill pbgc-content-container">
+            <div class="d-flex flex-column h-100">
+                {% block content -%}
+
+                    {% comment %}
+                        This is the primary and block that other pages should override with page-specific content.
+                        Establishes a consistent look and feel of the site with flexible content blocks.
+                    {% endcomment %}
+
+                {%- endblock %}
+                {% block footer -%}
+                    {% comment %}
+                        Includes PBGC standard footer that will always stick to the bottom of the site.
+                        Can optionally be overridden on a per page baissi if a different footer is needed.
+                    {% endcomment %}
+                    {% include 'PBGC - Footer' %}
+                {%- endblock %}
+            </div>
+        </div>
+    </body>
+</html>

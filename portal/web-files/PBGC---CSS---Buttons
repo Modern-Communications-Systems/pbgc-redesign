@@ -1,0 +1,26 @@
+.pbgc .btn-pbgc {
+  border-radius: 8px;
+}
+.pbgc .btn-pbgc:hover {
+  box-shadow: 2px 2px 0px #0b4778;
+}
+.pbgc .btn-pbgc:focus, .pbgc .btn-pbgc:active {
+  box-shadow: 0px 0px 4px 2px rgba(0, 189, 227, 0.5);
+}
+.pbgc .btn-pbgc-primary {
+  background-color: #005ea2;
+  color: #ffffff;
+}
+.pbgc .btn-pbgc-secondary {
+  background-color: #e7f6f8;
+  color: #1d192b;
+}
+.pbgc .btn-pbgc-info {
+  background-color: #ffffff;
+  color: #005ea2;
+}
+.pbgc .btn-pbgc-default {
+  background-color: #ffffff;
+  color: #005ea2;
+  border: 1px solid #005ea2;
+}

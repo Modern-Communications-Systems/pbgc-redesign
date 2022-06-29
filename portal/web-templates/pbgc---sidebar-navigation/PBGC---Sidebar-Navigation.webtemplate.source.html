@@ -1,0 +1,56 @@
+  <!-- Start Sidebar -->
+  <nav class="d-flex flex-column h-100 pbgc-sidebar">
+    <div class="container-fluid flex-shrink-0">
+      <div class="row">
+        <div class="col">
+          <img class="pbgc-logo" src="/imgs/pbgc-logo.svg" alt="PBGC Logo">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <nav class="nav flex-column nav-pills pbgc-sidebar-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            {% assign primary_nav = weblinks["PBGC - Primary Navigation"] %}
+            {% if primary_nav %}
+                {% for link in primary_nav.weblinks %}
+                    <a class="nav-link {% if link.adx_displayorder == 1 %}active{% endif %}" href="{{ link.url }}" title="{{ link.tooltip | escape }}" role="tab" aria-selected="true">
+                        <span class="material-icons-outlined pbgc-icon">{{ link.image.url }}</span>
+                        <span class="pbgc-sidebar-tab">{{ link.name | escape }}</span>
+                    </a>
+                {% endfor %}
+            {% endif %}
+            {% comment %} <a class="nav-link active" href="#" role="tab" aria-selected="true">
+              <span class="material-icons-outlined pbgc-icon">speed</span>
+              <span class="pbgc-sidebar-tab">Dashboard</span>
+            </a>
+            <a class="nav-link" href="#" role="tab" aria-selected="true">
+              <span class="material-icons-outlined pbgc-icon">note_add</span>
+              <span class="pbgc-sidebar-tab">New Filing</span>
+            </a>
+            <a class="nav-link" href="#" role="tab" aria-selected="true">
+              <span class="material-icons-outlined pbgc-icon">help_outline</span>
+              <span class="pbgc-sidebar-tab">Help Center</span>
+            </a>
+            <a class="nav-link" href="#" role="tab" aria-selected="true">
+              <span class="material-icons-outlined pbgc-icon">settings</span>
+              <span class="pbgc-sidebar-tab">Settings</span>
+            </a> {% endcomment %}
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="mt-auto">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <nav class="nav flex-column nav-pills pbgc-sidebar-pills  pbgc-sidebar-logout" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link" href="#" role="tab" aria-selected="true">
+                <span class="material-icons-outlined pbgc-icon">logout</span>
+                <span class="pbgc-sidebar-tab">Logout</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- End Sidebar -->

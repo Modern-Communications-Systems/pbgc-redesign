@@ -1,0 +1,12 @@
+adx_append: false
+adx_appendto: false
+adx_create: true
+adx_delete: false
+adx_entitylogicalname: new_filing
+adx_entityname: PBGC - Filings
+adx_entitypermission_webrole:
+- 9f0a4780-1fe4-ec11-bb3d-000d3a3ac623
+adx_entitypermissionid: b3b62e00-aef4-ec11-bb3d-00224809ed39
+adx_read: true
+adx_scope: 756150000
+adx_write: true
