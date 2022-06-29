@@ -1,0 +1,49 @@
+{% comment %}
+    Name: PBGC - Sidebar Navigation
+    Description: Controls the sidebar navigation within the portal using a Web Links set.
+    Author: Deloitte
+    Date Last Modified: 06/27/2022
+{% endcomment %}
+<nav class="d-flex flex-column h-100 pbgc-sidebar">
+  <div class="container-fluid flex-shrink-0">
+    <div class="row">
+      <div class="col">
+        <img class="pbgc-logo" src="/imgs/pbgc-logo.svg" alt="PBGC Logo">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <nav class="nav flex-column nav-pills pbgc-sidebar-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          {% comment %}
+            Gets the Web Link Set "PBGC - Primary Navigation" and create links on the site for each link.
+            The name of the material icon is hosted within the Link Image field on the link.
+          {% endcomment %}
+          {% assign primary_nav = weblinks["PBGC - Primary Navigation"] %}
+          {% if primary_nav %}
+              {% for link in primary_nav.weblinks %}
+                  <a class="nav-link {% if link.adx_displayorder == 1 %}active{% endif %}" href="{{ link.url }}" title="{{ link.tooltip | escape }}" role="tab" aria-selected="true">
+                      <span class="material-icons-outlined pbgc-icon">{{ link.image.url }}</span>
+                      <span class="pbgc-sidebar-tab">{{ link.name | escape }}</span>
+                  </a>
+              {% endfor %}
+          {% endif %}
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-- TODO: Add logout functionality including login.gov logout endpoint -->
+  <div class="mt-auto">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav class="nav flex-column nav-pills pbgc-sidebar-pills  pbgc-sidebar-logout" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link" href="#" role="tab" aria-selected="true">
+              <span class="material-icons-outlined pbgc-icon">logout</span>
+              <span class="pbgc-sidebar-tab">Logout</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,54 @@
+{% block query %}
+    {% comment %}
+        Extend this template using the {% extend %} tag and include the fetchXML query that will populate the content list.
+    {% endcomment %}
+{% endblock %}
+
+{% block table %}
+{
+    [
+        {
+            "LogicalName": "new_filingstatus",
+            "DisplayName": { content: },
+            "DataType": "optionset"
+        },
+        {
+            
+        }
+    ]
+}
+    
+{% comment %} Need to make column headers and fetch variable name dynamic or parameterized {% endcomment %}
+<table class="pbgc-dashboard-table table">
+    <thead>
+        <tr>
+            <th scope="col">Filing Type</th>
+            <th scope="col">Company Name</th>
+            <th scope="col">Date Created</th>
+            <th scope="col">EIN/PIN</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+    {% unless queryResults && queryResults.results.totalrecordcount > 0 %}
+        {% for row in queryResults.results.entities %}
+            <tr>
+                <td scope="row">{{ row.new_filingstatus }}</td>
+                <td scope="row">{{ row.new_companyname }}</td>
+                <td scope="row">{{ row.createdon }}</td>
+                <td scope="row">{{ row.new_ein_pn }}</td>
+                <td>
+                    <button class="btn btn-sm btn-pbgc btn-pbgc-secondar">
+                        Continue
+                        <span class="material-icons-outlined pbgc-table-icon">
+                            arrow_forward
+                        </span>
+                    </button>
+                </td>
+            </tr>
+        {% endfor %}
+    {% endif %}
+    </tbody>>
+</table>
+
+{% endblock %}

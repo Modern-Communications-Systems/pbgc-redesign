@@ -1,0 +1,18 @@
+{% fetchxml queryResults %}
+    <fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='true'>
+        <entity name='new_filing'>
+            <attribute name='new_filingstatus'></attribute>
+            <attribute name='new_filingtype'></attribute>
+            <attribute name="new_companyname"></attribute>
+            <attribute name="new_ein_pn"></attribute>
+            <order attribute='fullname' descending='false' />
+            <link-entity name='listmember' from='entityid' to='contactid' visible='false' intersect='true'>
+                <link-entity name='list' from='listid' to='listid' alias='aa'>
+                <filter type='and'>
+                <condition attribute='listname' operator='eq' value='myList' />
+                </filter>
+                </link-entity>
+            </link-entity>
+        </entity>
+    </fetch>
+{% endfetchxml %}

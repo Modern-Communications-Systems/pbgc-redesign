@@ -1,0 +1,86 @@
+{% extends 'PBGC - Base Template' %}
+
+{% block pageHeader %}
+  <link rel="stylesheet" href="/css/pbgc-dashboard.css">
+{% endblock %}
+
+{% block content %}
+  <div class="flex-shrink-0">
+    <div class="container-fluid p-4 pbgc-dashboard">
+      <ul class="nav nav-tabs" id="pbgcDashboardTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" href="#pbgcDraftsTabContent" id="pbgcDashboardDrafts" data-toggle="tab">Drafts</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" href="#pbgcSubmittedTabContent" id="pbgcDashboardSubmitted" data-toggle="tab">Submitted</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="pbgcDraftsTabContent" role="tabpanel" aria-labelledby="home-tab">
+          <div class="card pbgc-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+
+                  {% include 'PBGC - Content List' %}
+                  {% comment %} <table class="pbgc-dashboard-table table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Filing Type</th>
+                        <th scope="col">Company Name</th>
+                        <th scope="col">Date Created</th>
+                        <th scope="col">EIN/PIN</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td scope="row">e-4010: Controlled Group Filing</td>
+                        <td>Acme Services Co.</td>
+                        <td>05/01/2022</td>
+                        <td>3648210377</td>
+                        <td>
+                          <button class="btn btn-sm btn-pbgc btn-pbgc-secondary">
+                            Continue 
+                            <span class="material-icons-outlined pbgc-table-icon">
+                              arrow_forward
+                            </span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td scope="row">e-4043 Reportable Events</td>
+                        <td>Acme Services Co.</td>
+                        <td>04/28/2022</td>
+                        <td>3648210377</td>
+                        <td>
+                          <button class="btn btn-sm btn-pbgc btn-pbgc-secondary">
+                            Continue 
+                            <span class="material-icons-outlined pbgc-table-icon">
+                              arrow_forward
+                            </span>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table> {% endcomment %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="pbgcSubmittedTabContent" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="card pbgc-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  Submitted.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
