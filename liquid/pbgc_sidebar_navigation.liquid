@@ -21,7 +21,7 @@
           {% assign primary_nav = weblinks["PBGC - Primary Navigation"] %}
           {% if primary_nav %}
               {% for link in primary_nav.weblinks %}
-                  <a class="nav-link {% if link.adx_displayorder == 1 %}active{% endif %}" href="{{ link.url }}" title="{{ link.tooltip | escape }}" role="tab" aria-selected="true">
+                  <a class="nav-link {% if link.adx_displayorder == 1 %} active {% endif %}" href="{{ link.url }}" title="{{ link.tooltip | escape }}" role="tab" {% if link.adx_displayorder == 1 -%} aria-selected="true" {%- endif %}>
                       <span class="material-icons-outlined pbgc-icon">{{ link.image.url }}</span>
                       <span class="pbgc-sidebar-tab">{{ link.name | escape }}</span>
                   </a>
