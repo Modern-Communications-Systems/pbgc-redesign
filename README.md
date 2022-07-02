@@ -186,3 +186,5 @@ Following the instructions above and going back to your browser, you will see th
 If you want to see what other variables you can override, check them all out inside the `node_modules/bootstrap/scss/_variables.scss` file. You can take any one of them and add them inside your own `_variables.scss` file and add whatever value you like. This gives you enormous freedom and customization abilities while saving you tons of time. Not only that, but maintaining the stylesheets will also be much easier.
 
 In case you only had regular CSS files and wanted to change the main color of your website, you would need to either change each hex color instance or run a find and replace command.
+
+Original link to blog article: [How to set up Gulp 4, Bootstrap, Sass and BrowserSync for a simple workflow](https://themesberg.com/blog/tutorial/gulp-4-bootstrap-sass-browsersync)
