@@ -1,0 +1,16 @@
+@import 'pbgc_theme';
+
+.pbgc {
+  
+  .pbgc-content-container {
+    background-color: $pbgc-gray-100;
+
+    .pbgc-content-section {
+      padding: 0.5rem 2rem;
+      margin-bottom: 1rem;
+      background-color: #ffffff;
+      border: none;
+      border-radius: $pbgc-border-radius;
+    }
+  }
+}

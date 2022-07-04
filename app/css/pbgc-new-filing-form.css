@@ -1,0 +1,55 @@
+.pbgc .pbgc-new-filing .pbgc-info-accordion .card {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 16px;
+}
+.pbgc .pbgc-new-filing .pbgc-info-accordion .card .card-header {
+  padding: 0.5rem 0.75rem;
+  background-color: #f2f2f2;
+  border: none;
+}
+.pbgc .pbgc-new-filing .pbgc-info-accordion .card .card-header .info-accordion-btn {
+  line-height: normal;
+}
+.pbgc .pbgc-new-filing .pbgc-info-accordion .card .card-header .info-accordion-btn .info-icon-container {
+  padding-top: 4px;
+}
+.pbgc .pbgc-new-filing .pbgc-info-accordion .card .card-header .info-accordion-btn .info-icon-container .help-icon {
+  font-size: 1.5rem;
+}
+.pbgc .pbgc-new-filing .pbgc-info-accordion .card .card-header .info-accordion-btn .info-icon-container .chevron-icon::before {
+  font-family: "Material Icons";
+  font-size: 1.5rem;
+  content: "\e5cf";
+}
+.pbgc .pbgc-new-filing .pbgc-info-accordion .card .card-header .info-accordion-btn.collapsed .chevron-icon::before {
+  content: "\e5ce";
+}
+.pbgc .pbgc-new-filing .pbgc-info-accordion .card .card-header .info-accordion-btn .help-text-container {
+  margin: auto 0;
+  padding-left: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left;
+  flex: 1 1 auto !important;
+}
+.pbgc .pbgc-new-filing .btn-pbgc-large-icon {
+  width: 300px;
+  height: 300px;
+  margin-right: 10px;
+}
+.pbgc .pbgc-new-filing .btn-pbgc-large-icon .radio-icon-container {
+  padding: 0.75rem 0 0 0.75rem;
+  text-align: left;
+}
+.pbgc .pbgc-new-filing .btn-pbgc-large-icon label {
+  padding-top: 1.5rem;
+}
+.pbgc .pbgc-new-filing .red {
+  color: red;
+}
+.pbgc .pbgc-new-filing .required {
+  color: #5c5c5c;
+  font-size: 0.9rem;
+  font-style: italic;
+}

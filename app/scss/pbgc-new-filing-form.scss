@@ -1,0 +1,88 @@
+@import 'pbgc_theme';
+
+.pbgc {
+
+  .pbgc-new-filing {
+
+    .pbgc-info-accordion {
+      
+      .card {
+        background-color: $pbgc-gray-100;
+        border: none;
+        border-radius: $pbgc-border-radius;
+
+        .card-header {
+          padding: 0.5rem 0.75rem;
+          background-color: $pbgc-gray-100;
+          border: none;
+
+          .info-accordion-btn {
+            line-height: normal;
+
+            .info-icon-container {
+              padding-top: 4px;
+              
+              .help-icon {
+                font-size: 1.5rem;
+              }
+
+              .chevron-icon {
+                
+                &::before {
+                  font-family: 'Material Icons';
+                  font-size: 1.5rem;
+                  content: '\e5cf';
+                }
+              }
+            }
+
+            &.collapsed {
+
+              .chevron-icon {
+
+                &::before {
+                  content: '\e5ce';
+                }
+              }
+            }
+            
+            .help-text-container {
+              margin: auto 0;
+              padding-left: 10px;
+              font-size: 1rem;
+              font-weight: bold;
+              text-align: left;
+              flex: 1 1 auto !important;
+            }
+          }
+        }
+      }
+    }
+    
+    .btn-pbgc-large-icon {
+      width: 300px;
+      height: 300px;
+      margin-right: 10px;
+
+      .radio-icon-container {
+        padding: 0.75rem 0 0 0.75rem;
+        text-align: left;
+      }
+
+      label {
+        padding-top: 1.5rem;
+      }
+    }
+
+
+    // Text styles for required label
+    .red {
+      color: $pbgc-danger;
+    }
+    .required {
+      color: $pbgc-gray-500;
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+  }
+}

@@ -24,3 +24,41 @@
   color: #005ea2;
   border: 1px solid #005ea2;
 }
+.pbgc .btn-pbgc-radio {
+  border: 2px solid #f2f2f2;
+  border-radius: 16px;
+}
+.pbgc .btn-pbgc-radio .radio-icon::before {
+  font-family: "Material Icons";
+  content: "\e836";
+}
+.pbgc .btn-pbgc-radio:hover {
+  border: 2px solid #005ea2;
+}
+.pbgc .btn-pbgc-radio.focus, .pbgc .btn-pbgc-radio.active {
+  background-color: #e7f6f8;
+  border: 2px solid #005ea2;
+  box-shadow: none;
+}
+.pbgc .btn-pbgc-radio.focus .radio-icon::before, .pbgc .btn-pbgc-radio.active .radio-icon::before {
+  font-family: "Material Icons";
+  content: "\e837";
+}
+.pbgc .btn-pbgc-radio.focus label, .pbgc .btn-pbgc-radio.active label {
+  font-weight: bold;
+}
+.pbgc .btn-pbgc-radio-text {
+  margin-bottom: 15px;
+}
+.pbgc .btn-pbgc-radio-text .radio-icon-container {
+  padding: 0.5rem 0 0 0.25rem;
+}
+.pbgc .btn-pbgc-radio-text .radio-text-container {
+  padding-left: 10px;
+  flex: 1 1 auto !important;
+  text-align: left;
+}
+.pbgc .btn-pbgc-radio-text .radio-text-container label {
+  margin: 0.6rem 0;
+  font-size: 0.9rem;
+}

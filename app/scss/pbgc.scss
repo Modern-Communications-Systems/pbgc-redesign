@@ -1,3 +1,19 @@
+// General imports for all pages
+@import 'pbgc_theme';
+@import 'pbgc-footer';
+@import 'pbgc-sidebar';
+@import 'pbgc-content-sections';
+
+// General element imports
+@import 'pbgc-buttons';
+@import 'pbgc-progress-bar';
+
+// Specific page imports
+@import 'pbgc-dashboard';
+@import 'pbgc-forms';
+@import 'pbgc-new-filing-form';
+
 .pbgc {
+  height: 100vh;
   font-family: 'Public Sans', sans-serif;
 }

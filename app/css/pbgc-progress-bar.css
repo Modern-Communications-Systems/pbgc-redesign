@@ -1,0 +1,76 @@
+.pbgc .pbgc-progress-bar-container {
+  height: 160px;
+}
+.pbgc .pbgc-progress-bar-container .card-title {
+  color: #5c5c5c;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.pbgc .pbgc-progress-bar-container .progress-bar-wrapper {
+  margin: 0 auto;
+}
+.pbgc .pbgc-progress-bar-container .progress-bar-wrapper .step-indicator {
+  display: flex;
+  align-items: center;
+}
+.pbgc .pbgc-progress-bar-container .progress-bar-wrapper .step-indicator .indicator-line {
+  width: 100%;
+  height: 2px;
+  background: #dfe1e2;
+  flex: 8;
+}
+.pbgc .pbgc-progress-bar-container .progress-bar-wrapper .step-indicator .indicator-line.start {
+  width: 75px;
+  background: #005ea2;
+  flex: 1;
+}
+.pbgc .pbgc-progress-bar-container .progress-bar-wrapper .step-indicator .indicator-line.end {
+  width: 75px;
+  background: #dfe1e2;
+  flex: 1;
+}
+.pbgc .pbgc-progress-bar-container .progress-bar-wrapper .step-indicator .indicator-line.complete {
+  background: #005ea2;
+}
+.pbgc .pbgc-progress-bar-container .progress-bar-wrapper .step-indicator .step {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+.pbgc .pbgc-progress-bar-container .progress-bar-wrapper .step-indicator .step.complete .step-icon {
+  background: #005ea2;
+  border: none;
+}
+.pbgc .pbgc-progress-bar-container .progress-bar-wrapper .step-indicator .step.active .step-icon {
+  background: #a9d2ef;
+  border-color: #005ea2;
+}
+.pbgc .pbgc-progress-bar-container .progress-bar-wrapper .step-indicator .step .step-icon {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  background: #ffffff;
+  border: 2px solid #dfe1e2;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 50%;
+}
+.pbgc .pbgc-progress-bar-container .progress-bar-wrapper .step-indicator .step .step-icon .step-complete {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+.pbgc .pbgc-progress-bar-container .progress-bar-wrapper .step-indicator .step p {
+  text-align: center;
+  position: absolute;
+  top: 30px;
+  color: #5c5c5c;
+  font-size: 0.9rem;
+}
+@media screen and (max-width: 500px) {
+  .pbgc .pbgc-progress-bar-container .step p {
+    font-size: 11px;
+    bottom: -20px;
+  }
+}

@@ -8,7 +8,7 @@
       padding-left: 20px;
 
       .nav-link {
-        border-radius: .5rem .5rem 0 0;
+        border-radius: $pbgc-border-radius $pbgc-border-radius 0 0;
         color: $pbgc-primary;
         
         &.active {
@@ -19,7 +19,7 @@
     }
 
     .pbgc-card {
-      border-radius: 0 0 .5rem .5rem;
+      border-radius: 0 0 $pbgc-border-radius $pbgc-border-radius;
       border: none;
 
       .pbgc-dashboard-table {

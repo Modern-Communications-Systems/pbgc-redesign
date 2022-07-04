@@ -2,6 +2,7 @@
 
 .pbgc {
 
+  // Applied on all PBGC buttons
   .btn-pbgc {
     border-radius: 8px;
 
@@ -14,6 +15,7 @@
     }
   }
 
+  // Specific style buttons
   .btn-pbgc-primary {
     background-color: $pbgc-secondary;
     color: #ffffff;
@@ -22,19 +24,71 @@
   .btn-pbgc-secondary {
     background-color: $pbgc-info;
     color: $pbgc-dark;
-
   }
 
   .btn-pbgc-info {
     background-color: #ffffff;
     color: $pbgc-secondary;
-
   }
 
   .btn-pbgc-default {
     background-color: #ffffff;
     color: $pbgc-secondary;
     border: 1px solid $pbgc-secondary;
+  }
 
+  // Form buttons
+
+  // Radio selection button style (large icon, text)
+
+  .btn-pbgc-radio {
+    border: 2px solid $pbgc-gray-100;
+    border-radius: $pbgc-border-radius;
+    
+    .radio-icon::before {
+      font-family: 'Material Icons';
+      content: '\e836';
+    }
+
+    &:hover {
+      border: 2px solid $pbgc-secondary;
+    }
+
+    &.focus, &.active {
+      background-color: $pbgc-info;
+      border: 2px solid $pbgc-secondary;
+      box-shadow: none;
+
+      .radio-icon::before {
+        font-family: 'Material Icons';
+        content: '\e837';
+      }
+
+      label {
+        font-weight: bold;
+      }
+    }
+  }
+
+  // Radio text button styles
+
+  .btn-pbgc-radio-text {
+    margin-bottom: 15px;
+
+    .radio-icon-container {
+      padding: 0.5rem 0 0 0.25rem;
+    }
+
+    .radio-text-container {
+      padding-left: 10px;
+      flex: 1 1 auto!important;
+      text-align: left;
+
+      label {
+        margin: .6rem 0;
+        // padding-top: 3px;
+        font-size: 0.9rem;
+      }
+    }
   }
 }

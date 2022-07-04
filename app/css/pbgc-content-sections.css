@@ -1,0 +1,10 @@
+.pbgc .pbgc-content-container {
+  background-color: #f2f2f2;
+}
+.pbgc .pbgc-content-container .pbgc-content-section {
+  padding: 0.5rem 2rem;
+  margin-bottom: 1rem;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 16px;
+}
