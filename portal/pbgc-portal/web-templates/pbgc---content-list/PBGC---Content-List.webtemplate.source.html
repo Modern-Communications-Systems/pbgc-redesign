@@ -1,62 +1,63 @@
+<!-- TODO: Add comments desribing code and usage -->
 
 {%-assign listID=entityListID-%}
 
 {%-entitylist id:listID-%}
 {%-entityview id:params.view, search:params.search, order:params.order, page:params.page, pagesize:params.pagesize, metafilter:params.mf-%}
-    <table class="pbgc-dashboard-table table" data-order="{{ order  | h }}" >
-        <thead>
-            <tr>
-                {%- for c in entityview.columns -%}
-                    <th scope="col" width="{{ c.width  | h }}" data-logicalname="{{ c.logical_name  | h }} ">
-                    {% if c.sort_enabled %}
-                        {% assign current_sort = params.order | current_sort:c.logical_name %}
-                        {% case current_sort %}
-                        {% when 'ASC' %}
-                        <a href="{{ request.path_and_query | add_query:'order', c.sort_descending  | h }}">
-                            {{ c.name  | h }} <i class="fa fa-sort-asc"></i>
-                        </a>
-                        {% when 'DESC' %}
-                        <a href="{{ request.path_and_query | add_query:'order', c.sort_ascending  | h }}">
-                            {{ c.name  | h }} <i class="fa fa-sort-desc"></i>
-                        </a>
-                        {% else %}
-                        <a href="{{ request.path_and_query | add_query:'order', c.sort_ascending  | h }}">
-                            {{ c.name  | h }} <i class="fa fa-unsorted"></i>
-                        </a>
-                        {% endcase %}
-                    {% else %}
-                        {{ c.name  | h }}
-                    {% endif %}
-                    </th>
-                {%- endfor -%}   
-            </tr>
-        </thead>
-        <tbody>
-            {%- for r in entityview.records-%}
-                <tr>
-                {%- for c in entityview.columns -%}
-                    {% assign attr = r[c.logical_name] %}
-                    {% assign attr_type = c.attribute_type | downcase %}
-                    <td scope="row">
-                        {% if attr.is_entity_reference -%}
-                            {{ attr.name  | h }}
-                        {% elsif attr_type == 'datetime' %}
-                            {% if attr %}
-                                <time datetime="{{ attr | date_to_iso8601  | h }}" >
-                                {{ attr   | date: 'f' }}
-                                </time>
-                            {% endif %}
-                        {% elsif attr_type == 'picklist' %}
-                            {{ attr.label  | h }}
-                        {% else %}
-                            {{ attr  | h }}
-                        {% endif -%}
-                    </td>
-                {% endfor %}
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+  <table class="pbgc-dashboard-table table" data-order="{{ order  | h }}" >
+    <thead>
+      <tr>
+        {%- for c in entityview.columns -%}
+          <th scope="col" width="{{ c.width  | h }}" data-logicalname="{{ c.logical_name  | h }} ">
+            {% if c.sort_enabled %}
+              {% assign current_sort = params.order | current_sort:c.logical_name %}
+              {% case current_sort %}
+                {% when 'ASC' %}
+                <a href="{{ request.path_and_query | add_query:'order', c.sort_descending  | h }}">
+                  {{ c.name  | h }} <i class="fa fa-sort-asc"></i>
+                </a>
+                {% when 'DESC' %}
+                <a href="{{ request.path_and_query | add_query:'order', c.sort_ascending  | h }}">
+                  {{ c.name  | h }} <i class="fa fa-sort-desc"></i>
+                </a>
+                {% else %}
+                <a href="{{ request.path_and_query | add_query:'order', c.sort_ascending  | h }}">
+                  {{ c.name  | h }} <i class="fa fa-unsorted"></i>
+                </a>
+              {% endcase %}
+              {% else %}
+                {{ c.name  | h }}
+            {% endif %}
+          </th>
+        {%- endfor -%}   
+      </tr>
+    </thead>
+    <tbody>
+      {%- for r in entityview.records-%}
+        <tr>
+        {%- for c in entityview.columns -%}
+          {% assign attr = r[c.logical_name] %}
+          {% assign attr_type = c.attribute_type | downcase %}
+          <td scope="row">
+            {% if attr.is_entity_reference -%}
+              {{ attr.name  | h }}
+            {% elsif attr_type == 'datetime' %}
+              {% if attr %}
+                <time datetime="{{ attr | date_to_iso8601  | h }}" >
+                {{ attr   | date: 'f' }}
+                </time>
+              {% endif %}
+            {% elsif attr_type == 'picklist' %}
+              {{ attr.label  | h }}
+            {% else %}
+              {{ attr  | h }}
+            {% endif -%}
+          </td>
+        {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 
     {% if entityview.pages.size > 1 %}
       {% assign first_page = entityview.first_page %}

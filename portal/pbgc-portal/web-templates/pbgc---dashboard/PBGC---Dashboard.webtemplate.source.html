@@ -7,6 +7,11 @@
 {% block content %}
   <div class="flex-shrink-0">
     <div class="container-fluid p-4 pbgc-dashboard">
+      {% comment %}
+        List of tabs to be displayed on the page with bookmarks to their respective content tables.
+        Add <li> for each additional tab that will be displayed.
+      {% endcomment %}
+      <!-- TODO: Would it be possible to make this fully dynamic with a "Tabbed Lists Control" template that in turn created both tabs and lists -->
       <ul class="nav nav-tabs" id="pbgcDashboardTabs" role="tablist">
         <li class="nav-item" role="presentation">
           <a class="nav-link active" href="#pbgcDraftsTabContent" id="pbgcDashboardDrafts" data-toggle="tab">Drafts</a>
@@ -15,6 +20,12 @@
           <a class="nav-link" href="#pbgcSubmittedTabContent" id="pbgcDashboardSubmitted" data-toggle="tab">Submitted</a>
         </li>
       </ul>
+      {% comment %}
+        Elements for each of the content tables corresponding to the tabs that will be displayed on the page.
+        Add a <div> for each additional table, the id should be the same as teh href bookmark on the tab.
+        The last descendant of each <div> should pull in the appropriate entity list by the id using the following:
+          {% include 'PBGC - Content List' entityListId: "[Entity List Guid]"" %}
+      {% endcomment %}
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="pbgcDraftsTabContent" role="tabpanel" aria-labelledby="home-tab">
           <div class="card pbgc-card">
