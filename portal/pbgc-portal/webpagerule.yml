@@ -1,0 +1,17 @@
+- adx_name: Restrict Read on PBGC - Dashboard
+  adx_right: 2
+  adx_webpageaccesscontrolrule_webrole: []
+  adx_webpageaccesscontrolruleid: 2758346c-10fe-ec11-82e5-00224808820d
+  adx_webpageid: 70fabd66-11f4-ec11-bb3d-00224809ed39
+  statecode: 1
+  statuscode: 2
+- adx_name: Grant Change to Administrators
+  adx_right: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - a00a4780-1fe4-ec11-bb3d-000d3a3ac623
+  adx_webpageaccesscontrolruleid: 9d0a4780-1fe4-ec11-bb3d-000d3a3ac623
+  adx_webpageid: 8d0a4780-1fe4-ec11-bb3d-000d3a3ac623
+- adx_name: Grant Change to Content
+  adx_right: 1
+  adx_webpageaccesscontrolrule_webrole: []
+  adx_webpageaccesscontrolruleid: 9e0a4780-1fe4-ec11-bb3d-000d3a3ac623

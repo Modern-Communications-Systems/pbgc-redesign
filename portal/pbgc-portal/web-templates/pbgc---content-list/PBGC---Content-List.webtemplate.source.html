@@ -1,0 +1,135 @@
+
+{%-assign listID=entityListID-%}
+
+{%-entitylist id:listID-%}
+{%-entityview id:params.view, search:params.search, order:params.order, page:params.page, pagesize:params.pagesize, metafilter:params.mf-%}
+    <table class="pbgc-dashboard-table table" data-order="{{ order  | h }}" >
+        <thead>
+            <tr>
+                {%- for c in entityview.columns -%}
+                    <th scope="col" width="{{ c.width  | h }}" data-logicalname="{{ c.logical_name  | h }} ">
+                    {% if c.sort_enabled %}
+                        {% assign current_sort = params.order | current_sort:c.logical_name %}
+                        {% case current_sort %}
+                        {% when 'ASC' %}
+                        <a href="{{ request.path_and_query | add_query:'order', c.sort_descending  | h }}">
+                            {{ c.name  | h }} <i class="fa fa-sort-asc"></i>
+                        </a>
+                        {% when 'DESC' %}
+                        <a href="{{ request.path_and_query | add_query:'order', c.sort_ascending  | h }}">
+                            {{ c.name  | h }} <i class="fa fa-sort-desc"></i>
+                        </a>
+                        {% else %}
+                        <a href="{{ request.path_and_query | add_query:'order', c.sort_ascending  | h }}">
+                            {{ c.name  | h }} <i class="fa fa-unsorted"></i>
+                        </a>
+                        {% endcase %}
+                    {% else %}
+                        {{ c.name  | h }}
+                    {% endif %}
+                    </th>
+                {%- endfor -%}   
+            </tr>
+        </thead>
+        <tbody>
+            {%- for r in entityview.records-%}
+                <tr>
+                {%- for c in entityview.columns -%}
+                    {% assign attr = r[c.logical_name] %}
+                    {% assign attr_type = c.attribute_type | downcase %}
+                    <td scope="row">
+                        {% if attr.is_entity_reference -%}
+                            {{ attr.name  | h }}
+                        {% elsif attr_type == 'datetime' %}
+                            {% if attr %}
+                                <time datetime="{{ attr | date_to_iso8601  | h }}" >
+                                {{ attr   | date: 'f' }}
+                                </time>
+                            {% endif %}
+                        {% elsif attr_type == 'picklist' %}
+                            {{ attr.label  | h }}
+                        {% else %}
+                            {{ attr  | h }}
+                        {% endif -%}
+                    </td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% if entityview.pages.size > 1 %}
+      {% assign first_page = entityview.first_page %}
+      {% assign last_page = entityview.last_page %}
+      {% assign page_offset = entityview.page | minus:1 | divided_by:10 | times:10 %}
+      {% assign page_slice_first_page = page_offset | plus:1 %}
+      {% assign page_slice_last_page = page_offset | plus:10 %}
+
+      <ul class="pagination" >
+        <li {% unless first_page and entityview.page > 1 %}class="disabled"{% endunless %}>
+          <a
+            {% if first_page and entityview.page > 1 %}
+              href="{{ request.url | add_query:'page', first_page | path_and_query  | h }}"
+            {% endif %}>
+            &laquo;
+          </a>
+        </li>
+
+        <li {% unless entityview.previous_page %}class="disabled"{% endunless %}>
+          <a
+            {% if entityview.previous_page %}
+              href="{{ request.url | add_query:'page', entityview.previous_page | path_and_query  | h }}"
+            {% endif %}>
+            &lsaquo;
+          </a>
+        </li>
+
+        {% if page_slice_first_page > 1 %}
+          {% assign previous_slice_last_page = page_slice_first_page | minus:1 %}
+          <li>
+            <a href="{{ request.url | add_query:'page', previous_slice_last_page | path_and_query  | h }}">
+              &hellip;
+            </a>
+          </li>
+        {% endif %}
+
+        {% for page in entityview.pages offset:page_offset limit:10 -%}
+          <li{% if page == entityview.page %} class="active"{% endif %}>
+            <a href="{{ request.url | add_query:'page', page | path_and_query  | h }}">
+              {{ page }}
+            </a>
+          </li>
+        {% endfor -%}
+
+        {% if page_slice_last_page < entityview.pages.size %}
+          {% assign next_slice_first_page = page_slice_last_page | plus:1 %}
+          <li>
+            <a href="{{ request.url | add_query:'page', next_slice_first_page | path_and_query  | h }}">
+              &hellip;
+            </a>
+          </li>
+        {% endif %}
+
+        <li {% unless entityview.next_page %}class="disabled"{% endunless %}>
+          <a
+            {% if entityview.next_page %}
+              href="{{ request.url | add_query:'page', entityview.next_page | path_and_query  | h }}"
+            {% endif %}>
+            &rsaquo;
+          </a>
+        </li>
+
+        <li {% unless last_page and entityview.page < last_page %}class="disabled"{% endunless %}>
+          <a
+            {% if last_page and entityview.page < last_page %}
+              href="{{ request.url | add_query:'page', last_page | path_and_query  | h }}"
+            {% endif %}>
+            &raquo;
+          </a>
+        </li>
+      </ul>
+
+    {% endif %}
+
+{%-endentityview-%}
+{%-endentitylist-%}

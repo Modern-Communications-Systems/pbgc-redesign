@@ -1,0 +1,66 @@
+<p>TEST 7</p>
+
+<p>Page Title: {{page.title}}</p>
+<p>Entitylist: {{page.adx_entitylist.id}}</p>
+
+{% entitylist id:page.adx_entitylist.id %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>View Count</th>
+                <th>Search Enabled</th>
+                <th>Create Enabled</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{entitylist.views.size}}</td>
+                <td>{{entitylist.search_enabled}}</td>
+                <td>{{entitylist.create_enabled}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% entityview id:params.view, search:params.search, order:params.order, page:params.page, pagesize:params.pagesize, metafilter:params.mf %}
+
+    <table>
+        <thead>
+            <tr>
+                {%- for c in entityview.columns -%}
+                    <th>{{c.name}}</th>
+                {%- endfor -%}   
+            </tr>
+        </thead>
+        <tbody>
+            {%- for r in entityview.records-%}
+                <tr>
+                {%- for c in entityview.columns -%}
+
+                    {% assign attr = r[c.logical_name] %}
+                    {% assign attr_type = c.attribute_type | downcase %}
+
+                    <td>
+                        {% if attr.is_entity_reference -%}
+                            {{ attr.name  | h }}
+                        {% elsif attr_type == 'datetime' %}
+                            {% if attr %}
+                                <time datetime="{{ attr | date_to_iso8601  | h }}" >
+                                {{ attr   | date: 'f' }}
+                                </time>
+                            {% endif %}
+                        {% elsif attr_type == 'picklist' %}
+                            {{ attr.label  | h }}
+                        {% else %}
+                            {{ attr  | h }}
+                        {% endif -%}
+                    </td>
+
+                {%- endfor -%}
+                </tr>
+            {%- endfor -%}
+        </tbody>
+    </table> 
+
+{% endentityview %}
+{% endentitylist %}
