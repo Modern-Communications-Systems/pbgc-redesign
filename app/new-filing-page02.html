@@ -15,7 +15,7 @@
 </head>
 <body class="pbgc d-flex">
   <!-- Start Sidebar -->
-  <nav class="d-flex flex-column pbgc-sidebar">
+  <nav class="pbgc-sidebar">
     <div class="container-fluid">
       <div class="row">
         <div class="col">
@@ -41,173 +41,160 @@
               <span class="material-icons-outlined pbgc-icon">settings</span>
               <span class="pbgc-sidebar-tab">Settings</span>
             </a>
+            <span class="pbgc-sidebar-logout"></span>
+            <a class="nav-link" href="#" role="tab" aria-selected="false">
+              <span class="material-icons-outlined pbgc-icon">logout</span>
+              <span class="pbgc-sidebar-tab">Logout</span>
+            </a>
           </nav>
-        </div>
-      </div>
-    </div>
-    <div class="mt-auto">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col">
-            <nav class="nav flex-column nav-pills pbgc-sidebar-pills pbgc-sidebar-logout" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link" href="#" role="tab" aria-selected="true">
-                <span class="material-icons-outlined pbgc-icon">logout</span>
-                <span class="pbgc-sidebar-tab">Logout</span>
-              </a>
-            </nav>
-          </div>
         </div>
       </div>
     </div>
   </nav>
   <!-- End Sidebar -->
   
-  <div class="flex-column flex-fill pbgc-content-container">
-    <div class="d-flex flex-column h-100">
-      <!-- Start Form -->
-      <div class="flex-shrink-0">
-        <div class="container-fluid p-4 pbgc-new-filing">
-          <div class="row">
-            <div class="col">
-              <!-- Start Progress Bar -->
-              <div class="pbgc-content-section pbgc-progress-bar-container card">
-                <div class="card-body">
-                  <p class="card-title">New Filing</p>
-                  <div class="progress-bar-wrapper">
-                    <section class="step-indicator">
-                      <div class="indicator-line start"></div>
-                      <div class="step start active">
-                        <div class="step-icon active"></div>
-                        <p>Employer type</p>
-                      </div>
-                      <div class="indicator-line"></div>
-                      <div class="step middle">
-                        <div class="step-icon"></div>
-                        <p>Filing name</p>
-                      </div>
-                      <div class="indicator-line"></div>
-                      <div class="step middle">
-                        <div class="step-icon"></div>
-                        <p>Prepopulate</p>
-                      </div>
-                      <div class="indicator-line"></div>
-                      <div class="step end">
-                        <div class="step-icon"></div>
-                        <p>Filing created</p>
-                      </div>
-                      <div class="indicator-line end"></div>
-                    </section>
+  <div class="pbgc-content-container d-flex flex-column flex-fill">
+    <!-- Start Form -->
+    <div class="pbgc-new-filing container-fluid">
+      <div class="row">
+        <div class="col">
+          <!-- Start Progress Bar -->
+          <div class="pbgc-content-section pbgc-progress-bar-container card">
+            <div class="card-body">
+              <p class="card-title">New Filing</p>
+              <div class="progress-bar-wrapper">
+                <section class="step-indicator">
+                  <div class="indicator-line start"></div>
+                  <div class="step start active">
+                    <div class="step-icon active"></div>
+                    <p>Employer type</p>
                   </div>
-                </div>
+                  <div class="indicator-line"></div>
+                  <div class="step middle">
+                    <div class="step-icon"></div>
+                    <p>Filing name</p>
+                  </div>
+                  <div class="indicator-line"></div>
+                  <div class="step middle">
+                    <div class="step-icon"></div>
+                    <p>Prepopulate</p>
+                  </div>
+                  <div class="indicator-line"></div>
+                  <div class="step end">
+                    <div class="step-icon"></div>
+                    <p>Filing created</p>
+                  </div>
+                  <div class="indicator-line end"></div>
+                </section>
               </div>
-              <!-- End Progress Bar -->
             </div>
           </div>
-          <div class="row">
-            <div class="col">
-              <div class="pbgc-content-section card">
-                <div class="pbgc-form-container card-body">
-                  <div class="row">
-                    <div class="col-8">
-                      <h1 class="card-title">Which category is your filing?</h1>
-                      <form>
-                        <div class="form-group row">
-                          <div class="col-7">
-                            <div class="btn-group-toggle btn-group-toggle" data-toggle="buttons">
-                              <div class="btn btn-block btn-pbgc-radio btn-pbgc-radio-text">
-                                <div class="d-flex">
-                                  <div class="radio-icon-container">
-                                    <span class="radio-icon"></span>
-                                  </div>
-                                  <div class="radio-text-container">
-                                    <input type="radio" name="newFilingCategories" id="newFilingCat1" tabindex="0" />
-                                    <label for="newFilingCat1">4010 Controlled Group Filings</label>
-                                  </div>
-                                </div>
+          <!-- End Progress Bar -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="pbgc-content-section card">
+            <div class="pbgc-form-container card-body">
+              <div class="row">
+                <div class="col-8">
+                  <h1 class="card-title">Which category is your filing?</h1>
+                  <form>
+                    <div class="form-group row">
+                      <div class="col-7">
+                        <div class="btn-group-toggle btn-group-toggle" data-toggle="buttons">
+                          <div class="btn btn-block btn-pbgc-radio btn-pbgc-radio-text">
+                            <div class="d-flex">
+                              <div class="radio-icon-container">
+                                <span class="radio-icon"></span>
                               </div>
-                              <div class="btn btn-block btn-pbgc-radio btn-pbgc-radio-text">
-                                <div class="d-flex">
-                                  <div class="radio-icon-container">
-                                    <span class="radio-icon"></span>
-                                  </div>
-                                  <div class="radio-text-container">
-                                    <input type="radio" name="newFilingCategories" id="newFilingCat2" tabindex="0" />
-                                    <label for="newFilingCat2">4043 Reportable Events</label>
-                                  </div>
-                                </div>
+                              <div class="radio-text-container">
+                                <input type="radio" name="newFilingCategories" id="newFilingCat1" tabindex="0" />
+                                <label for="newFilingCat1">4010 Controlled Group Filings</label>
                               </div>
-                              <div class="btn btn-block btn-pbgc-radio btn-pbgc-radio-text">
-                                <div class="d-flex">
-                                  <div class="radio-icon-container">
-                                    <span class="radio-icon"></span>
-                                  </div>
-                                  <div class="radio-text-container">
-                                    <input type="radio" name="newFilingCategories" id="newFilingCat3" tabindex="0" />
-                                    <label for="newFilingCat3">Settlement Requirements</label>
-                                  </div>
-                                </div>
+                            </div>
+                          </div>
+                          <div class="btn btn-block btn-pbgc-radio btn-pbgc-radio-text">
+                            <div class="d-flex">
+                              <div class="radio-icon-container">
+                                <span class="radio-icon"></span>
                               </div>
-                              <div class="btn btn-block btn-pbgc-radio btn-pbgc-radio-text">
-                                <div class="d-flex">
-                                  <div class="radio-icon-container">
-                                    <span class="radio-icon"></span>
-                                  </div>
-                                  <div class="radio-text-container">
-                                    <input type="radio" name="newFilingCategories" id="newFilingCat4" tabindex="0" />
-                                    <label for="newFilingCat4">Coverage Determination Request</label>
-                                  </div>
-                                </div>
+                              <div class="radio-text-container">
+                                <input type="radio" name="newFilingCategories" id="newFilingCat2" tabindex="0" />
+                                <label for="newFilingCat2">4043 Reportable Events</label>
                               </div>
-                              <div class="btn btn-block btn-pbgc-radio btn-pbgc-radio-text">
-                                <div class="d-flex">
-                                  <div class="radio-icon-container">
-                                    <span class="radio-icon"></span>
-                                  </div>
-                                  <div class="radio-text-container">
-                                    <input type="radio" name="newFilingCategories" id="newFilingCat5" tabindex="0" />
-                                    <label for="newFilingCat5">Standard Termination</label>
-                                  </div>
-                                </div>
+                            </div>
+                          </div>
+                          <div class="btn btn-block btn-pbgc-radio btn-pbgc-radio-text">
+                            <div class="d-flex">
+                              <div class="radio-icon-container">
+                                <span class="radio-icon"></span>
+                              </div>
+                              <div class="radio-text-container">
+                                <input type="radio" name="newFilingCategories" id="newFilingCat3" tabindex="0" />
+                                <label for="newFilingCat3">Settlement Requirements</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="btn btn-block btn-pbgc-radio btn-pbgc-radio-text">
+                            <div class="d-flex">
+                              <div class="radio-icon-container">
+                                <span class="radio-icon"></span>
+                              </div>
+                              <div class="radio-text-container">
+                                <input type="radio" name="newFilingCategories" id="newFilingCat4" tabindex="0" />
+                                <label for="newFilingCat4">Coverage Determination Request</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="btn btn-block btn-pbgc-radio btn-pbgc-radio-text">
+                            <div class="d-flex">
+                              <div class="radio-icon-container">
+                                <span class="radio-icon"></span>
+                              </div>
+                              <div class="radio-text-container">
+                                <input type="radio" name="newFilingCategories" id="newFilingCat5" tabindex="0" />
+                                <label for="newFilingCat5">Standard Termination</label>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col">
-                            <span class="red">*</span><span class="required"> Required</span>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col form-buttons">
-                            <a href="new-filing-page01.html" class="btn btn-pbgc btn-pbgc-default">Back</a>
-                            <a href="new-filing-page02.html" class="btn btn-pbgc btn-pbgc-primary ml-2">Next</a>
-                          </div>
-                        </div>
-                      </form>
+                      </div>
                     </div>
-                    <div class="col-4">
-                      <div class="accordion pbgc-info-accordion" id="formInfoAccordion">
-                        <div class="card">
-                          <div class="card-header" id="formHelpHeader">
-                            <div class="btn btn-block info-accordion-btn d-flex collapsed" type="button" data-toggle="collapse" data-target="#formHelpContent" aria-expanded="true" aria-controls="formHelpContent">
-                              <div class="info-icon-container">
-                                <span class="help-icon material-icons-outlined">
-                                  help_outline
-                                </span>
-                              </div>
-                              <div class="help-text-container flex-fill">
-                                Need help?
-                              </div>
-                              <div class="info-icon-container">
-                                <span class="chevron-icon"></span>
-                              </div>
-                            </div>
+                    <div class="row">
+                      <div class="col">
+                        <span class="red">*</span><span class="required"> Required</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col form-buttons">
+                        <a href="new-filing-page01.html" class="btn btn-pbgc btn-pbgc-default">Back</a>
+                        <a href="new-filing-page02.html" class="btn btn-pbgc btn-pbgc-primary ml-2">Next</a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-4">
+                  <div class="accordion pbgc-info-accordion" id="formInfoAccordion">
+                    <div class="card">
+                      <div class="card-header" id="formHelpHeader">
+                        <div class="btn btn-block info-accordion-btn d-flex collapsed" type="button" data-toggle="collapse" data-target="#formHelpContent" aria-expanded="true" aria-controls="formHelpContent">
+                          <div class="info-icon-container">
+                            <span class="help-icon material-icons-outlined">
+                              help_outline
+                            </span>
                           </div>
-                          <div id="formHelpContent" class="collapse" aria-labelledby="formHelpHeader" data-parent="#formInfoAccordion">
-                            <div class="card-body">
-                              Help content.
-                            </div>
+                          <div class="help-text-container flex-fill">
+                            Need help?
                           </div>
+                          <div class="info-icon-container">
+                            <span class="chevron-icon"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="formHelpContent" class="collapse" aria-labelledby="formHelpHeader" data-parent="#formInfoAccordion">
+                        <div class="card-body">
+                          Help content.
                         </div>
                       </div>
                     </div>
@@ -219,9 +206,10 @@
         </div>
       </div>
       <!-- End Form -->
-      
       <!-- Start Footer -->
-      <footer class="mt-auto py-1 pbgc-footer"><a href="#">PBGC.gov</a> | <a href="#">Paperwork Reduction Act Notice</a></footer>
+      <footer class="pbgc-footer">
+        <a href="#">PBGC.gov</a> | <a href="#">Paperwork Reduction Act Notice</a>
+      </footer>
       <!-- End Footer -->
     </div>
   </div>

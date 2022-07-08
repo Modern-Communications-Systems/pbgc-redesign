@@ -1,4 +1,6 @@
 .pbgc .pbgc-footer {
+  margin-top: auto;
+  padding-bottom: 0.5rem;
   text-align: center;
 }
 .pbgc .pbgc-footer a {
@@ -8,6 +10,8 @@
 
 .pbgc .pbgc-sidebar {
   min-width: 225px;
+  align-self: stretch;
+  padding: 1.5rem 1.5rem 0 1.5rem;
   background-color: #ffffff;
 }
 .pbgc .pbgc-sidebar .pbgc-logo {
@@ -42,12 +46,15 @@
   vertical-align: middle;
 }
 .pbgc .pbgc-sidebar .pbgc-sidebar-logout {
-  padding-top: 10px;
+  width: 120px;
+  margin: 3rem auto 0 auto;
+  padding-top: 30px;
   border-top: 1px solid #dfe1e2;
+  display: block;
 }
 
 .pbgc .pbgc-content-container {
-  background-color: #f2f2f2;
+  padding: 1.5rem 1.5rem 0 1.5rem;
 }
 .pbgc .pbgc-content-container .pbgc-content-section {
   padding: 0.5rem 2rem;
@@ -296,6 +303,7 @@
 }
 
 .pbgc {
-  height: 100vh;
+  min-height: 100%;
+  background-color: #f2f2f2;
   font-family: "Public Sans", sans-serif;
 }
