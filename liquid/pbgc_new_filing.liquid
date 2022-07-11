@@ -1,0 +1,135 @@
+{% extends 'PBGC - Base Template' %}
+
+{% block pageHeader %}
+  <link rel="stylesheet" href="/css/pbgc-new-filing-form.css">
+{% endblock %}
+
+{% block content %}
+      <!-- Start Form -->
+      <div class="flex-shrink-0">
+        <div class="container-fluid p-4 pbgc-new-filing">
+          <div class="row">
+            <div class="col">
+              <!-- Start Progress Bar -->
+              <div class="pbgc-content-section pbgc-progress-bar-container card">
+                <div class="card-body">
+                  <p class="card-title">New Filing</p>
+                  <div class="progress-bar-wrapper">
+                    <section class="step-indicator">
+                      <div class="indicator-line start"></div>
+                      <div class="step start active">
+                        <div class="step-icon active"></div>
+                        <p>Employer type</p>
+                      </div>
+                      <div class="indicator-line"></div>
+                      <div class="step middle">
+                        <div class="step-icon"></div>
+                        <p>Filing name</p>
+                      </div>
+                      <div class="indicator-line"></div>
+                      <div class="step middle">
+                        <div class="step-icon"></div>
+                        <p>Prepopulate</p>
+                      </div>
+                      <div class="indicator-line"></div>
+                      <div class="step end">
+                        <div class="step-icon"></div>
+                        <p>Filing created</p>
+                      </div>
+                      <div class="indicator-line end"></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              <!-- End Progress Bar -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="pbgc-content-section card">
+                <div class="pbgc-form-container card-body">
+                  <div class="row">
+                    <div class="col-8">
+                      <h1 class="card-title">What type of filing are you submitting?</h1>
+                      <form>
+                        <div class="form-group row">
+                          <div class="col-12">
+                            <div class="btn-group-toggle btn-group-toggle" data-toggle="buttons">
+                              <div class="btn btn-pbgc-radio btn-pbgc-large-icon">
+                                <div class="d-flex flex-column">
+                                  <div class="radio-icon-container">
+                                    <span class="radio-icon"></span>
+                                  </div>
+                                  <div class="pt-4">
+                                    <img src="images/icon-person.svg" alt="Single employer filing type icon">
+                                  </div>
+                                  <div>
+                                    <input type="radio" name="newFilingTypes" id="newFilingType1" tabindex="0" />
+                                    <label for="newFilingType1">Single employer</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="btn btn-pbgc-radio btn-pbgc-large-icon">
+                                <div class="d-flex flex-column">
+                                  <div class="radio-icon-container">
+                                    <span class="radio-icon"></span>
+                                  </div>
+                                  <div class="pt-4">
+                                    <img src="images/icon-supervisor_account.svg" alt="Multiemployer filing type icon">
+                                  </div>
+                                  <div>
+                                    <input type="radio" name="newFilingTypes" id="newFilingType2" tabindex="0" />
+                                    <label for="newFilingType2">Multiemployer</label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <span class="red">*</span><span class="required"> Required</span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col form-buttons">
+                            <a href="new-filing-page02.html" class="btn btn-pbgc btn-pbgc-primary">Next</a>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="col-4">
+                      <div class="accordion pbgc-info-accordion" id="formInfoAccordion">
+                        <div class="card">
+                          <div class="card-header" id="formHelpHeader">
+                            <div class="btn btn-block info-accordion-btn d-flex collapsed" type="button" data-toggle="collapse" data-target="#formHelpContent" aria-expanded="true" aria-controls="formHelpContent">
+                              <div class="info-icon-container">
+                                <span class="help-icon material-icons-outlined">
+                                  help_outline
+                                </span>
+                              </div>
+                              <div class="help-text-container flex-fill">
+                                Need help?
+                              </div>
+                              <div class="info-icon-container">
+                                <span class="chevron-icon"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="formHelpContent" class="collapse" aria-labelledby="formHelpHeader" data-parent="#formInfoAccordion">
+                            <div class="card-body">
+                              Help content.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Form -->
+{% endblock %}
