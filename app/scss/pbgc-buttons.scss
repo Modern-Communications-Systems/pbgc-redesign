@@ -39,54 +39,62 @@
 
   // Form buttons
 
-  // Radio selection button style (large icon, text)
-
+  // Radio form elements (general styles)
   .btn-pbgc-radio {
-    border: 2px solid $pbgc-gray-100;
-    border-radius: $pbgc-border-radius;
-    
-    .radio-icon::before {
-      font-family: 'Material Icons';
-      content: '\e836';
-    }
 
-    &:hover {
-      border: 2px solid $pbgc-secondary;
-    }
+    label {
+      width: 100%;
+      border: 2px solid $pbgc-gray-100;
+      border-radius: $pbgc-border-radius;
 
-    &.focus, &.active {
-      background-color: $pbgc-info;
-      border: 2px solid $pbgc-secondary;
-      box-shadow: none;
-
-      .radio-icon::before {
-        font-family: 'Material Icons';
-        content: '\e837';
+      &:hover {
+        border: 2px solid $pbgc-secondary;
+        cursor: pointer;
       }
+    }
 
-      label {
+    input {
+      opacity: 0;
+      position: fixed;
+      width: 0;
+
+      &:checked + label {
+        background-color: $pbgc-info;
+        border: 2px solid $pbgc-secondary;
+        box-shadow: none;
         font-weight: bold;
       }
     }
   }
 
-  // Radio text button styles
-
+  // Radio form element with text
   .btn-pbgc-radio-text {
-    margin-bottom: 15px;
+    margin-bottom: 7px;
 
-    .radio-icon-container {
-      padding: 0.5rem 0 0 0.25rem;
+    input {
+
+      &:checked + label {
+
+        &::before {
+          font-family: 'Material Icons';
+          content: '\e837';
+        }
+      }
     }
 
-    .radio-text-container {
-      padding-left: 10px;
-      flex: 1 1 auto!important;
-      text-align: left;
+    label {
+      padding: 15px;
 
-      label {
-        margin: .6rem 0;
-        // padding-top: 3px;
+      &::before {
+        padding-right: 10px;
+        position: relative;
+        top: 3px;
+        font-family: 'Material Icons';
+        font-size: 1rem;
+        content: '\e836';
+      }
+
+      .label-text {
         font-size: 0.9rem;
       }
     }

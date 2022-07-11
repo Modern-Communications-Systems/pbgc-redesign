@@ -54,7 +54,6 @@
   <!-- End Sidebar -->
   
   <main class="pbgc-content-container d-flex flex-column flex-fill">
-    <!-- Start Form -->
     <div class="pbgc-new-filing container-fluid">
       <div class="row">
         <div class="col">
@@ -95,42 +94,34 @@
       <div class="row">
         <div class="col">
           <div class="pbgc-content-section card">
+            <!-- Start Form Container -->
             <div class="pbgc-form-container card-body">
               <div class="row">
-                <div class="col-8">
+                <div class="col-6">
                   <h1 class="card-title">What type of filing are you submitting?</h1>
-                  <form>
+                  <!-- Start Form -->
+                  <form id="newFilingTypesForm">
                     <div class="form-group row">
-                      <div class="col-12">
-                        <div class="btn-group-toggle btn-group-toggle" data-toggle="buttons">
-                          <div class="btn btn-pbgc-radio btn-pbgc-large-icon">
-                            <div class="d-flex flex-column">
-                              <div class="radio-icon-container">
-                                <span class="radio-icon"></span>
-                              </div>
-                              <div class="pt-4">
-                                <img src="images/icon-person.svg" alt="Single employer filing type icon">
-                              </div>
-                              <div>
-                                <input type="radio" name="newFilingTypes" id="newFilingType1" tabindex="0" />
-                                <label for="newFilingType1">Single employer</label>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="btn btn-pbgc-radio btn-pbgc-large-icon">
-                            <div class="d-flex flex-column">
-                              <div class="radio-icon-container">
-                                <span class="radio-icon"></span>
-                              </div>
-                              <div class="pt-4">
-                                <img src="images/icon-supervisor_account.svg" alt="Multiemployer filing type icon">
-                              </div>
-                              <div>
-                                <input type="radio" name="newFilingTypes" id="newFilingType2" tabindex="0" />
-                                <label for="newFilingType2">Multiemployer</label>
-                              </div>
-                            </div>
-                          </div>
+                      <div class="col-12 radio-btn-group">
+                        <div class="btn btn-pbgc-radio btn-pbgc-large-icon">
+                          <input type="radio" name="newFilingTypesRadio" id="newFilingType1">
+                          <label for="newFilingType1">
+                            <span class="radio-check-icon"></span>
+                            <img class="radio-large-img" src="images/icon-person.svg" alt="Single employer filing type icon">
+                            <span class="label-text">
+                              Single employer
+                            </span>
+                          </label>
+                        </div>
+                        <div class="btn btn-pbgc-radio btn-pbgc-large-icon">
+                          <input type="radio" name="newFilingTypesRadio" id="newFilingType2">
+                          <label for="newFilingType2">
+                            <span class="radio-check-icon"></span>
+                            <img class="radio-large-img" src="images/icon-supervisor_account.svg" alt="Multiemployer filing type icon">
+                            <span class="label-text">
+                              Multiemployer
+                            </span>
+                          </label>
                         </div>
                       </div>
                     </div>
@@ -145,8 +136,10 @@
                       </div>
                     </div>
                   </form>
+                  <!-- End Form -->
                 </div>
-                <div class="col-4">
+                <div class="offset-md-2 col-md-4">
+                  <!-- Start Information Accordion -->
                   <div class="accordion pbgc-info-accordion" id="formInfoAccordion">
                     <div class="card">
                       <div class="card-header" id="formHelpHeader">
@@ -171,14 +164,15 @@
                       </div>
                     </div>
                   </div>
+                  <!-- End Information Accordion -->
                 </div>
               </div>
             </div>
+            <!-- End Form Container-->
           </div>
         </div>
       </div>
     </div>
-    <!-- End Form -->
     <!-- Start Footer -->
     <footer class="pbgc-footer">
       <a href="#">PBGC.gov</a> | <a href="#">Paperwork Reduction Act Notice</a>

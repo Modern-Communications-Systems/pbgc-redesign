@@ -1,0 +1,59 @@
+@import 'pbgc_theme';
+
+.pbgc {
+
+  .pbgc-info-accordion {
+      
+    .card {
+      background-color: $pbgc-gray-100;
+      border: none;
+      border-radius: $pbgc-border-radius;
+
+      .card-header {
+        padding: 0.5rem 0.75rem;
+        background-color: $pbgc-gray-100;
+        border: none;
+
+        .info-accordion-btn {
+          line-height: normal;
+
+          .info-icon-container {
+            padding-top: 4px;
+            
+            .help-icon {
+              font-size: 1.5rem;
+            }
+
+            .chevron-icon {
+              
+              &::before {
+                font-family: 'Material Icons';
+                font-size: 1.5rem;
+                content: '\e5ce';
+              }
+            }
+          }
+
+          &.collapsed {
+
+            .chevron-icon {
+
+              &::before {
+                content: '\e5cf';
+              }
+            }
+          }
+          
+          .help-text-container {
+            margin: auto 0;
+            padding-left: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: left;
+            flex: 1 1 auto !important;
+          }
+        }
+      }
+    }
+  }
+}

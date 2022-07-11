@@ -53,7 +53,7 @@
   </nav>
   <!-- End Sidebar -->
   
-  <main class="pbgc-content-container d-flex flex-column flex-fill">
+  <div class="pbgc-content-container d-flex flex-column flex-fill">
     <div class="pbgc-new-filing container-fluid">
       <div class="row">
         <div class="col">
@@ -64,13 +64,17 @@
               <div class="progress-bar-wrapper">
                 <section class="step-indicator">
                   <div class="indicator-line start"></div>
-                  <div class="step start active">
-                    <div class="step-icon active"></div>
+                  <div class="step start complete">
+                    <div class="step-icon">
+                      <span class="step-complete material-icons-outlined">
+                        done
+                        </span>
+                    </div>
                     <p>Employer type</p>
                   </div>
-                  <div class="indicator-line"></div>
-                  <div class="step middle">
-                    <div class="step-icon"></div>
+                  <div class="indicator-line active"></div>
+                  <div class="step middle active">
+                    <div class="step-icon active"></div>
                     <p>Filing name</p>
                   </div>
                   <div class="indicator-line"></div>
@@ -94,52 +98,68 @@
       <div class="row">
         <div class="col">
           <div class="pbgc-content-section card">
-            <!-- Start Form Container-->
+            <!-- Start Form Container -->
             <div class="pbgc-form-container card-body">
               <div class="row">
                 <div class="col-6">
-                  <h1 class="card-title">Which category is your filing?</h1>
+                  <h1 class="card-title">What is the name of your filing?</h1>
                   <!-- Start Form -->
-                  <form id="newFilingCategoriesForm">
+                  <form id="newFilingNameForm">
                     <div class="form-group row">
                       <div class="col-7 radio-btn-group">
                         <div class="btn-pbgc-radio btn-pbgc-radio-text">
-                          <input type="radio" name="newFilingCategoriesRadio" id="newFilingCat1">
-                          <label for="newFilingCat1" class="btn-pbgc-radio btn-pbgc-radio-text">
+                          <input type="radio" name="newFilingNameRadio" id="newFilingName1">
+                          <label for="newFilingName1" class="btn-pbgc-radio btn-pbgc-radio-text">
                             <span class="label-text">
-                              4010 Controlled Group Filings
+                              Transfer of Benefit Liabilities
                             </span>
                           </label>
                         </div>
                         <div class="btn-pbgc-radio btn-pbgc-radio-text">
-                          <input type="radio" name="newFilingCategoriesRadio" id="newFilingCat2">
-                          <label for="newFilingCat2" class="btn-pbgc-radio btn-pbgc-radio-text">
+                          <input type="radio" name="newFilingNameRadio" id="newFilingName2">
+                          <label for="newFilingName2" class="btn-pbgc-radio btn-pbgc-radio-text">
                             <span class="label-text">
-                              4043 Reportable Events
+                              Change in Controlled Group
                             </span>
                           </label>
                         </div>
                         <div class="btn-pbgc-radio btn-pbgc-radio-text">
-                          <input type="radio" name="newFilingCategoriesRadio" id="newFilingCat3">
-                          <label for="newFilingCat3" class="btn-pbgc-radio btn-pbgc-radio-text">
+                          <input type="radio" name="newFilingNameRadio" id="newFilingName3">
+                          <label for="newFilingName3" class="btn-pbgc-radio btn-pbgc-radio-text">
                             <span class="label-text">
-                              Settlement Requirements
+                              Liquidation
                             </span>
                           </label>
                         </div>
                         <div class="btn-pbgc-radio btn-pbgc-radio-text">
-                          <input type="radio" name="newFilingCategoriesRadio" id="newFilingCat4">
-                          <label for="newFilingCat4" class="btn-pbgc-radio btn-pbgc-radio-text">
+                          <input type="radio" name="newFilingNameRadio" id="newFilingName4">
+                          <label for="newFilingName4" class="btn-pbgc-radio btn-pbgc-radio-text">
                             <span class="label-text">
-                              Coverage Determination Request
+                              Extraordinary Dividend or Stock Redemption
                             </span>
                           </label>
                         </div>
                         <div class="btn-pbgc-radio btn-pbgc-radio-text">
-                          <input type="radio" name="newFilingCategoriesRadio" id="newFilingCat5">
-                          <label for="newFilingCat5" class="btn-pbgc-radio btn-pbgc-radio-text">
+                          <input type="radio" name="newFilingNameRadio" id="newFilingName5">
+                          <label for="newFilingName5" class="btn-pbgc-radio btn-pbgc-radio-text">
                             <span class="label-text">
-                              Standard Termination
+                              Application for Minimum Funding Waiver
+                            </span>
+                          </label>
+                        </div>
+                        <div class="btn-pbgc-radio btn-pbgc-radio-text">
+                          <input type="radio" name="newFilingNameRadio" id="newFilingName6">
+                          <label for="newFilingName6" class="btn-pbgc-radio btn-pbgc-radio-text">
+                            <span class="label-text">
+                              Loan Default
+                            </span>
+                          </label>
+                        </div>
+                        <div class="btn-pbgc-radio btn-pbgc-radio-text">
+                          <input type="radio" name="newFilingNameRadio" id="newFilingName7">
+                          <label for="newFilingName7" class="btn-pbgc-radio btn-pbgc-radio-text">
+                            <span class="label-text">
+                              Insolvency or Similar Settlement
                             </span>
                           </label>
                         </div>
@@ -152,8 +172,8 @@
                     </div>
                     <div class="row">
                       <div class="col form-buttons">
-                        <a href="new-filing-page01.html" class="btn btn-pbgc btn-pbgc-default">Back</a>
-                        <a href="new-filing-page03.html" class="btn btn-pbgc btn-pbgc-primary ml-2">Next</a>
+                        <a href="new-filing-page03.html" class="btn btn-pbgc btn-pbgc-default">Back</a>
+                        <a href="new-filing-page05.html" class="btn btn-pbgc btn-pbgc-primary ml-2">Next</a>
                       </div>
                     </div>
                   </form>
@@ -199,6 +219,6 @@
       </footer>
       <!-- End Footer -->
     </div>
-  </main>
+  </div>
 </body>
 </html>

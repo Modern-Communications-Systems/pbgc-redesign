@@ -1,0 +1,35 @@
+.pbgc .pbgc-info-accordion .card {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 16px;
+}
+.pbgc .pbgc-info-accordion .card .card-header {
+  padding: 0.5rem 0.75rem;
+  background-color: #f2f2f2;
+  border: none;
+}
+.pbgc .pbgc-info-accordion .card .card-header .info-accordion-btn {
+  line-height: normal;
+}
+.pbgc .pbgc-info-accordion .card .card-header .info-accordion-btn .info-icon-container {
+  padding-top: 4px;
+}
+.pbgc .pbgc-info-accordion .card .card-header .info-accordion-btn .info-icon-container .help-icon {
+  font-size: 1.5rem;
+}
+.pbgc .pbgc-info-accordion .card .card-header .info-accordion-btn .info-icon-container .chevron-icon::before {
+  font-family: "Material Icons";
+  font-size: 1.5rem;
+  content: "\e5ce";
+}
+.pbgc .pbgc-info-accordion .card .card-header .info-accordion-btn.collapsed .chevron-icon::before {
+  content: "\e5cf";
+}
+.pbgc .pbgc-info-accordion .card .card-header .info-accordion-btn .help-text-container {
+  margin: auto 0;
+  padding-left: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left;
+  flex: 1 1 auto !important;
+}

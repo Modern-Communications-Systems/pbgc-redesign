@@ -12,6 +12,10 @@
   <link rel="stylesheet" href="css/pbgc.css" />
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+  <script>
+
+  </script>
 </head>
 <body class="pbgc d-flex">
   <!-- Start Sidebar -->
@@ -53,7 +57,7 @@
   </nav>
   <!-- End Sidebar -->
   
-  <main class="pbgc-content-container d-flex flex-column flex-fill">
+  <div class="pbgc-content-container d-flex flex-column flex-fill">
     <div class="pbgc-new-filing container-fluid">
       <div class="row">
         <div class="col">
@@ -64,18 +68,26 @@
               <div class="progress-bar-wrapper">
                 <section class="step-indicator">
                   <div class="indicator-line start"></div>
-                  <div class="step start active">
-                    <div class="step-icon active"></div>
+                  <div class="step start complete">
+                    <div class="step-icon">
+                      <span class="step-complete material-icons-outlined">
+                        done
+                        </span>
+                    </div>
                     <p>Employer type</p>
                   </div>
-                  <div class="indicator-line"></div>
-                  <div class="step middle">
-                    <div class="step-icon"></div>
+                  <div class="indicator-line complete"></div>
+                  <div class="step middle complete">
+                    <div class="step-icon">
+                      <span class="step-complete material-icons-outlined">
+                        done
+                        </span>
+                    </div>
                     <p>Filing name</p>
                   </div>
-                  <div class="indicator-line"></div>
-                  <div class="step middle">
-                    <div class="step-icon"></div>
+                  <div class="indicator-line complete"></div>
+                  <div class="step middle active">
+                    <div class="step-icon active"></div>
                     <p>Prepopulate</p>
                   </div>
                   <div class="indicator-line"></div>
@@ -94,55 +106,40 @@
       <div class="row">
         <div class="col">
           <div class="pbgc-content-section card">
-            <!-- Start Form Container-->
+            <!-- Start Form Container -->
             <div class="pbgc-form-container card-body">
               <div class="row">
-                <div class="col-6">
-                  <h1 class="card-title">Which category is your filing?</h1>
+                <div class="col-md-6">
+                  <h1 class="card-title">Would you like to start a new filing from scratch or pre-populate from a previous filing?</h1>
                   <!-- Start Form -->
-                  <form id="newFilingCategoriesForm">
+                  <form id="newFilingPrepopulateForm">
                     <div class="form-group row">
                       <div class="col-7 radio-btn-group">
                         <div class="btn-pbgc-radio btn-pbgc-radio-text">
-                          <input type="radio" name="newFilingCategoriesRadio" id="newFilingCat1">
-                          <label for="newFilingCat1" class="btn-pbgc-radio btn-pbgc-radio-text">
+                          <input type="radio" name="newFilingPrepopulateRadio" id="newFilingPrepopulate1">
+                          <label for="newFilingPrepopulate1">
                             <span class="label-text">
-                              4010 Controlled Group Filings
+                              Start new
                             </span>
                           </label>
                         </div>
                         <div class="btn-pbgc-radio btn-pbgc-radio-text">
-                          <input type="radio" name="newFilingCategoriesRadio" id="newFilingCat2">
-                          <label for="newFilingCat2" class="btn-pbgc-radio btn-pbgc-radio-text">
+                          <input type="radio" name="newFilingPrepopulateRadio" id="newFilingPrepopulate2">
+                          <label for="newFilingPrepopulate2">
                             <span class="label-text">
-                              4043 Reportable Events
+                              Pre-populate from previous
                             </span>
                           </label>
                         </div>
-                        <div class="btn-pbgc-radio btn-pbgc-radio-text">
-                          <input type="radio" name="newFilingCategoriesRadio" id="newFilingCat3">
-                          <label for="newFilingCat3" class="btn-pbgc-radio btn-pbgc-radio-text">
-                            <span class="label-text">
-                              Settlement Requirements
-                            </span>
-                          </label>
-                        </div>
-                        <div class="btn-pbgc-radio btn-pbgc-radio-text">
-                          <input type="radio" name="newFilingCategoriesRadio" id="newFilingCat4">
-                          <label for="newFilingCat4" class="btn-pbgc-radio btn-pbgc-radio-text">
-                            <span class="label-text">
-                              Coverage Determination Request
-                            </span>
-                          </label>
-                        </div>
-                        <div class="btn-pbgc-radio btn-pbgc-radio-text">
-                          <input type="radio" name="newFilingCategoriesRadio" id="newFilingCat5">
-                          <label for="newFilingCat5" class="btn-pbgc-radio btn-pbgc-radio-text">
-                            <span class="label-text">
-                              Standard Termination
-                            </span>
-                          </label>
-                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-7">
+                        <select name="newFilingPrepopulateSelect" id="newFilingPrepopulateSelect" class="invisible">
+                          <option value="">Hello</option>
+                          <option value="">how are</option>
+                          <option value="">you?</option>
+                        </select>
                       </div>
                     </div>
                     <div class="row">
@@ -152,8 +149,8 @@
                     </div>
                     <div class="row">
                       <div class="col form-buttons">
-                        <a href="new-filing-page01.html" class="btn btn-pbgc btn-pbgc-default">Back</a>
-                        <a href="new-filing-page03.html" class="btn btn-pbgc btn-pbgc-primary ml-2">Next</a>
+                        <a href="new-filing-page04.html" class="btn btn-pbgc btn-pbgc-default">Back</a>
+                        <a href="new-filing-page06.html" class="btn btn-pbgc btn-pbgc-primary ml-2">Next</a>
                       </div>
                     </div>
                   </form>
@@ -199,6 +196,18 @@
       </footer>
       <!-- End Footer -->
     </div>
-  </main>
+  </div>
+  <script>
+    $('.radio-btn-group input').click(function(){
+      if (!$('#newFilingPrepopulate2').checked){
+        $('#newFilingPrepopulateSelect').toggleClass('invisible', 'visible');
+        console.log('checked');
+      } else {
+        $('#newFilingPrepopulateSelect').toggleClass('visible', 'invisible');
+        console.log('unchecked');
+      }
+    });
+
+  </script>
 </body>
 </html>
