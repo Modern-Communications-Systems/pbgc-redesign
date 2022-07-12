@@ -82,13 +82,17 @@
                     <p>Filing name</p>
                   </div>
                   <div class="indicator-line complete"></div>
-                  <div class="step middle active">
-                    <div class="step-icon active"></div>
+                  <div class="step middle complete">
+                    <div class="step-icon">
+                      <span class="step-complete material-icons-outlined">
+                        done
+                        </span>
+                    </div>
                     <p>Prepopulate</p>
                   </div>
-                  <div class="indicator-line"></div>
-                  <div class="step end">
-                    <div class="step-icon"></div>
+                  <div class="indicator-line complete"></div>
+                  <div class="step end active">
+                    <div class="step-icon active"></div>
                     <p>Filing created</p>
                   </div>
                   <div class="indicator-line end"></div>
@@ -103,84 +107,32 @@
         <div class="col">
           <div class="pbgc-content-section card">
             <!-- Start Form Container -->
-            <div class="pbgc-form-container card-body">
+            <div class="pbgc-form-complete-container card-body">
               <div class="row">
-                <div class="col-md-6">
-                  <h1 class="card-title">Would you like to start a new filing from scratch or pre-populate from a previous filing?</h1>
-                  <!-- Start Form -->
-                  <form id="newFilingPrepopulateForm">
-                    <div class="form-group row">
-                      <div class="col-7 radio-btn-group">
-                        <div class="btn-pbgc-radio btn-pbgc-radio-text">
-                          <input type="radio" name="newFilingPrepopulateRadio" id="newFilingPrepopulate1">
-                          <label for="newFilingPrepopulate1">
-                            <span class="label-text">
-                              Start new
-                            </span>
-                          </label>
-                        </div>
-                        <div class="btn-pbgc-radio btn-pbgc-radio-text">
-                          <input type="radio" name="newFilingPrepopulateRadio" id="newFilingPrepopulate2">
-                          <label for="newFilingPrepopulate2">
-                            <span class="label-text">
-                              Pre-populate from previous
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-group row invisible" id="newFilingPrepopulateSelectControl">
-                      <div class="col-7">
-                        <div class="input-group mb-3">
-                          <select class="custom-select" name="newFilingPrepopulateSelect" id="newFilingPrepopulateSelect">
-                            <option value="">-Select-</option>
-                            <option value="">Selection 1</option>
-                            <option value="">Selection 2</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
+                <div class="offset-md-2 col-md-5">
+                  <div class="form-complete-content">
                     <div class="row">
                       <div class="col">
-                        <span class="red">*</span><span class="required"> Required</span>
+                        <h1 class="card-title">Your Application for Minimum Funding Waiver filing has been created</h1>
+                        <div class="card-body">
+                          <p class="card-text">
+                            This filing will be visibile in the draft filings section of your dashboard. To start completing this filing click Start filing below.
+                          </p>
+                        </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col form-buttons">
-                        <a href="new-filing-page04.html" class="btn btn-pbgc btn-pbgc-default">Back</a>
-                        <a href="new-filing-complete.html" class="btn btn-pbgc btn-pbgc-primary ml-2">Next</a>
-                      </div>
-                    </div>
-                  </form>
-                  <!-- End Form -->
-                </div>
-                <div class="offset-md-2 col-md-4">
-                  <!-- Start Information Accordion -->
-                  <div class="accordion pbgc-info-accordion" id="formInfoAccordion">
-                    <div class="card">
-                      <div class="card-header" id="formHelpHeader">
-                        <div class="btn btn-block info-accordion-btn d-flex collapsed" type="button" data-toggle="collapse" data-target="#formHelpContent" aria-expanded="true" aria-controls="formHelpContent">
-                          <div class="info-icon-container">
-                            <span class="help-icon material-icons-outlined">
-                              help_outline
-                            </span>
-                          </div>
-                          <div class="help-text-container flex-fill">
-                            Need help?
-                          </div>
-                          <div class="info-icon-container">
-                            <span class="chevron-icon"></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div id="formHelpContent" class="collapse" aria-labelledby="formHelpHeader" data-parent="#formInfoAccordion">
-                        <div class="card-body">
-                          Help content.
-                        </div>
+                        <a href="new-filing-page01.html" class="btn btn-pbgc btn-pbgc-default">Create new</a>
+                        <a href="#" class="btn btn-pbgc btn-pbgc-primary ml-2">Continue filing</a>
                       </div>
                     </div>
                   </div>
-                  <!-- Start Information Accordion -->
+                </div>
+                <div class="form-complete-icon-container col-md-4 offset-md-1">
+                  <div class="form-complete-icon">
+                    <img src="/images/icon-add_task.svg" class="img-fluid" alt="Filing form completed icon">
+                  </div>
                 </div>
               </div>
             </div>

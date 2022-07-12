@@ -12,8 +12,52 @@
       font-weight: normal;
     }
 
+    .custom-select {
+      min-height: 40px;
+      padding-left: 20px;
+      background: #fff url('../images/icon-arrow_drop_down.svg') right 1rem center/18px 10px no-repeat;
+      font-size: 0.9rem;
+      border-radius: calc($pbgc-border-radius/2);
+    }
+
     .form-buttons {
       padding: 10rem 0 3rem 0;
+    }
+  }
+
+  .pbgc-form-complete-container {
+
+    .form-complete-content {
+      padding: 10rem 0 15rem 0;
+      margin-right: 5rem;
+      vertical-align: middle;
+
+      .card-title {
+        margin-bottom: 1.5rem;
+        font-size: 1.75rem;
+        font-weight: normal;
+      }
+
+      .card-body {
+        padding: 0;
+      }
+
+      .form-buttons {
+        padding-top: 3rem;
+      }
+    }
+
+    .form-complete-icon-container {
+      margin: auto 0;
+
+      .form-complete-icon {
+        padding-left: 5rem;
+  
+        img {
+          height: 240px;
+          width: 240px;
+        }
+      }
     }
   }
 }
